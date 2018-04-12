@@ -14,11 +14,40 @@ namespace Geodesyx
         [OperationContract]
         string DoWork();
 
-        [OperationContract]
-        string GetHello();
+    }
 
+    [ServiceContract]
+    public interface IRequest
+    {
+        [OperationContract]
+        IEnumerable<Models.DTO.Request> SelectAll();
 
         [OperationContract]
-        int GetSummm(int a, int b);
+        Models.DTO.Request Select(int id);
+
+        [OperationContract]
+        int Insert(int id, string name, string desc, int orderStatusChange);
+
+        [OperationContract]
+        int Update(int id = -1, string name = null, string desc = null, int orderStatusChange = -1);
+    }
+
+    [ServiceContract]
+    public interface IRequestStatusChange
+    {
+    }
+
+    [ServiceContract]
+    public interface IAddress
+    {
+
+        [OperationContract]
+        Models.DTO.Address Select(int id);
+
+        [OperationContract]
+        int Insert(int id, string name, string desc, int orderStatusChange);
+
+        [OperationContract]
+        int Update(int id = -1, string name = null, string desc = null, int orderStatusChange = -1);
     }
 }

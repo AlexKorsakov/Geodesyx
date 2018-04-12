@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Geodesyx.Models;
 
 
 namespace Geodesyx.Controllers
@@ -14,9 +15,7 @@ namespace Geodesyx.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = DBops.GetHello();
-            ViewBag.X = DBops.GetSummm(55, 12);
-            ViewBag.data = DBops.DoWork();
+            //ViewBag.data = DBops.DoWork();
             return View();
         }
 
