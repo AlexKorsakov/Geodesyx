@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Geodesyx.Models.DTO
 {
-    public class OrderStatus : _Base
+    public class TaskStatus : ABase
     {
         public string name;
     }

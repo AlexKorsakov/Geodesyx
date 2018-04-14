@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Geodesyx.Models.DTO
 {
-    public class _Base
+    public abstract class ABase
     {
         public int id { get; set; }
     }

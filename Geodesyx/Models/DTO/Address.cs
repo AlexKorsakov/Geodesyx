@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Geodesyx.Models.DTO
 {
-    public class Address : _Base
+    public class Address : ABase
     {
         public float X;
         public float Y;

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Geodesyx.Models.DTO
 {
-    public class Request_Task : _Base
+    public class Request_Task : ABase
     {
         public int task_id;
         public int request_id;

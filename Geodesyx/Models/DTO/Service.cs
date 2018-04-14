@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Geodesyx.Models.DTO
 {
-    public class Service : _Base
+    public class Service : ABase
     {
         public string service_name;
         public string description;

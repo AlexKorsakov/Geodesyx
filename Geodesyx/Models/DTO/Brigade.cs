@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Geodesyx.Models.DTO
 {
-    public class Brigade
+    public class Brigade : ABase
     {
         public string brigadeName;
-        public string brigadeLead_id; 
+        public string brigadeLead; 
     }
 }
