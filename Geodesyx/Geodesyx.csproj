@@ -155,11 +155,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BrigadeLeadController.cs" />
+    <Compile Include="Controllers\DirectorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SecretarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTO\VBrigadeEndedTasks.cs" />
+    <Compile Include="Models\DTO\VBrigadeInWorkTasks.cs" />
+    <Compile Include="Models\DTO\VBrigadeNewTasks.cs" />
     <Compile Include="Service\SBrigade.cs" />
     <Compile Include="Service\IService1.cs" />
     <Compile Include="Models\Autorization.cs" />
@@ -180,6 +184,9 @@
     <Compile Include="Models\DTO\ABase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\SAddress.cs" />
+    <Compile Include="Service\SBrigadeEndedTasks.cs" />
+    <Compile Include="Service\SBrigadeInWorkTasks.cs" />
+    <Compile Include="Service\SBrigadeNewTasks.cs" />
     <Compile Include="Service\Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -246,8 +253,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Secretary\Index.cshtml" />
-    <Content Include="Views\BrigadeLead\BrigadeLead.cshtml" />
+    <Content Include="Views\BrigadeLead\Index.cshtml" />
     <Content Include="Views\Secretary\NewTask.cshtml" />
+    <Content Include="Views\Director\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

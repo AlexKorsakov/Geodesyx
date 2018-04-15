@@ -39,6 +39,35 @@ namespace Geodesyx
         [OperationContract]
         IEnumerable<Models.DTO.Brigade> SelectBrigades();
     }
+    
+    [ServiceContract]
+    public interface IBrigadeEndedTasks
+    {
+        [OperationContract]
+        List<Models.DTO.VBrigadeEndedTasks> SelectAll();
+        [OperationContract]
+        List<Models.DTO.VBrigadeEndedTasks> SelectIn(List<int> task_ids);
+
+    }
+
+    [ServiceContract]
+    public interface IBrigadeInWorkTasks
+    {
+        [OperationContract]
+        List<Models.DTO.VBrigadeInWorkTasks> SelectAll();
+        [OperationContract]
+        List<Models.DTO.VBrigadeInWorkTasks> SelectIn(List<int> task_ids);
+
+    }
+
+    [ServiceContract]
+    public interface IBrigadeNewTasks
+    {
+        [OperationContract]
+        List<Models.DTO.VBrigadeNewTasks> SelectAll();
+        [OperationContract]
+        List<Models.DTO.VBrigadeNewTasks> SelectIn(List<int> task_ids);
+    }
 
     [ServiceContract]
     public interface IRequest
@@ -64,6 +93,9 @@ namespace Geodesyx
     {
         [OperationContract]
         int Insert(Models.DTO.Request_Task input);
+
+        [OperationContract]
+        List<int> SelectTasksID(int brigade);
     }
 
     [ServiceContract]

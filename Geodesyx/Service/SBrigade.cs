@@ -9,7 +9,7 @@ namespace Geodesyx.Service
 {
     public class SBrigade : Service1, IBrigade
     {
-        public IEnumerable<Models.DTO.Brigade> SelectBrigades()  //новые задачи
+        public IEnumerable<Models.DTO.Brigade> SelectBrigades()
         {
             List<Models.DTO.Brigade> requests = new List<Models.DTO.Brigade>();
             using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))

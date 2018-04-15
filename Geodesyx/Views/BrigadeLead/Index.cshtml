@@ -1,0 +1,186 @@
+﻿@model Geodesyx.Models.DTO.Brigade
+
+@{
+    ViewBag.Title = "Задачи";
+}
+
+@if (!String.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        <strong>Error!</strong> @ViewBag.ErrorMessage
+    </div>
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+            <h2>Управление задачами</h2>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a id="tab1" data-toggle="tab" href="#home">Заявки</a></li>
+                <li><a data-toggle="tab" id="tab2" href="#menu1">Задания</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="tasks" class="table table-striped">
+                                <tr>
+                                    <th>Задача</th>
+                                    <th>Задача</th>
+                                    <th>Описание задачи</th>
+                                    <th>Услуга</th>
+                                    <th>Статус</th>
+                                    <th>Создано</th>
+                                    <th>Адрес</th>
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in ViewBag.Brigadeview)
+                                {
+                                    <tr>
+                                        <td>@item.task_id</td>
+                                        <td>@item.request_name</td>
+                                        <td>@item.request_description</td>
+                                        <td>@item.service_name</td>
+                                        <td>@item.request_status_name</td>
+                                        <td>@item.change_date</td>
+                                        <td>@item.address_name</td>
+                                        <td>
+                                            <form action="@Url.Action("TaskToWork", "BrigadeLead")" method="post" id="TaskToWork">
+                                                <input type="hidden" name="task_id" value="@item.task_id" />
+                                                <input class="btn btn-primary" type="submit" value="В работу" />
+                                            </form>
+                                        </td>
+                                        <!--td>
+                                            <button class="btn btn-primary" onclick="AddPlacemark(@item.adr_X, @item.adr_Y)">На карте</button>
+                                        </td-->
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="tasks" class="table table-striped">
+                                <tr>
+                                    <th>Задача</th>
+                                    <th>Задача</th>
+                                    <th>Описание задачи</th>
+                                    <th>Услуга</th>
+                                    <th>Статус</th>
+                                    <th>Создано</th>
+                                    <th>Адрес</th>
+                                    <th></th>
+                                </tr>
+                                @foreach (var item in ViewBag.Brigadeview_inwork)
+                                {
+                                    <tr>
+                                        <td>@item.task_id</td>
+                                        <td>@item.request_name</td>
+                                        <td>@item.request_description</td>
+                                        <td>@item.service_name</td>
+                                        <td>@item.request_status_name</td>
+                                        <td>@item.change_date</td>
+                                        <td>@item.address_name</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-primary" onclick="return confirm('Действительно закрыть?') ? show_modal(@item.task_id, @item.request_id) :  0;">Закрыть</button>
+
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div style="width:100%;height:100%">
+                        <div id="ymap" style="width:100%;height:300px"></div>
+                    </div>
+                </div>
+            </div><br />
+        </div>
+    </div>
+</div>
+
+
+<div id="myModalBox" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="@Url.Action("TaskClose", "BrigadeLead")" method="post" id="TaskClose">
+
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Закрыть задачу</h4>
+                </div>
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" placeholder="Затраченное время (мин)" name="total_time" style="max-width:100%;" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <textarea class="form-control" rows="5" placeholder="Примечания" name="note" style="max-width:100%;"></textarea>
+                        </div>
+                    </div><br />
+                </div>
+                <!-- Футер модального окна -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Подтвердить</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+                <input type="hidden" name="task_id" value />
+                <input type="hidden" name="request_id" value />
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+    function init() {
+        var center = [55.3215, 42.1690];
+        var myMap = new ymaps.Map('ymap', {
+            center: center,
+            zoom: 13
+        });
+        myMap.events.add('click', function (e) {
+            if (!myMap.balloon.isOpen()) {
+                var coords = e.get('coords');
+                jQuery("#tasks input[name=X]").val(coords[0].toPrecision(6));
+                jQuery("#tasks input[name=Y]").val(coords[1].toPrecision(6));
+                myMap.balloon.open(coords, {
+                    contentHeader: 'Координаты заказчика',
+                    contentBody:
+                        '<p>' + [
+                            coords[0].toPrecision(6),
+                            coords[1].toPrecision(6)
+                        ].join(', ') + '</p>'
+                });
+            }
+            else {
+                myMap.balloon.close();
+            }
+        });
+    }
+    function AddPlacemark(X, Y) {
+        myPlacemark = new ymaps.Placemark([X, Y]);
+        myMap.geoObjects.add(myPlacemark);
+
+    }
+    function show_modal(task_id, request_id) {
+        jQuery("#myModalBox").modal('show');
+        jQuery("#TaskClose input[name=task_id]").val(task_id);
+        jQuery("#TaskClose input[name=request_id]").val(request_id);
+    }
+</script>

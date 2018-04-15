@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Задачи";
+}
+
+@if (!String.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        <strong>Error!</strong> @ViewBag.ErrorMessage
+    </div>
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+            <h2>Просмотр итогов за месяц</h2>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="tasks" class="table table-striped">
+                        <tr>
+                            <th>Задача</th>
+                            <th>Описание задачи</th>
+                            <th>Примечания</th>
+                            <th>Завершено</th>
+                            <th>Бригада</th>
+                            <th>Бригадир</th>
+                            <th>Затрачено</th>
+                        </tr>
+
+                        @foreach (var item in ViewBag.EndedTasksList)
+                        {
+                            <tr>
+                                <td>@item.request_name</td>
+                                <td>@item.request_description</td>
+                                <td>@item.task_note</td>
+                                <td>@item.change_date</td>
+                                @foreach (var brigade in ViewBag.BrigadeList)
+                                {
+                                    if (item.brigade_id == brigade.id)
+                                    {
+                                        <td>@brigade.brigadeLead</td>
+                                        <td>@brigade.brigadeName</td>
+                                    }
+
+                                }
+                                <td>@item.total_time</td>
+                                
+                            </tr>
+                        }
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

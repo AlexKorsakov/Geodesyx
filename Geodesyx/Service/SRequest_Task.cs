@@ -9,6 +9,22 @@ namespace Geodesyx.Service
 {
     public class SRequest_Task : Service1, IRequest_Task
     {
+        public List<int> SelectTasksID(int brigade)
+        {
+            var list = new List<int>();
+            using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
+            {
+                connection.Open();
+                OracleCommand oraCommand = new OracleCommand("SELECT TASK_ID FROM system.REQUEST_TASK WHERE BRIGADE_ID = :id", connection);
+                oraCommand.Parameters.Add("id", brigade);
+                OracleDataReader oraReader = oraCommand.ExecuteReader();
+                if (oraReader.HasRows)
+                    while (oraReader.Read())
+                        list.Add(oraReader.GetInt32(0));
+            }
+            return list;
+        }
+
         public int Insert(Models.DTO.Request_Task input)
         {
             List<OracleParameter> parameters = new List<OracleParameter>();
