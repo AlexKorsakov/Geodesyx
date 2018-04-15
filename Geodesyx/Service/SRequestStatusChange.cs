@@ -26,7 +26,60 @@ namespace Geodesyx.Service
                 return -1;
         }
 
+        public IEnumerable<Models.DTO.RequestStatusChange> Select(List<int> ids)
+        {
+            var requests = new List<Models.DTO.RequestStatusChange>();
+            foreach (var item in ids)
+            {
+                int id = item;
+                using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
+                {
+                    connection.Open();
+                    OracleCommand oraCommand = new OracleCommand("SELECT * "
+                                                                  + "FROM system.REQUEST_STATUS_CHANGE WHERE REQUEST_ID = :id", connection);
+                    oraCommand.Parameters.Add("id", id);
+                    OracleDataReader oraReader = oraCommand.ExecuteReader();
+                    if (oraReader.HasRows)
+                        while (oraReader.Read())
+                        {
+                            var temp = new Models.DTO.RequestStatusChange();
+                            temp.id = oraReader.GetInt32(0);
+                            temp.old_status = null;
+                            temp.old_status = oraReader.GetValue(1) == DBNull.Value ? temp.old_status = null : (int)oraReader.GetInt32(1);
+                            temp.new_status = oraReader.GetValue(2) == DBNull.Value ? temp.new_status = null : (int)oraReader.GetInt32(2);
+                            temp.change_date = oraReader.GetDateTime(3);
+                            temp.request_id = oraReader.GetInt32(4);
+                            requests.Add(temp);
+                        }
+                }
+            }
+            return requests;
+        }
 
+        public Models.DTO.RequestStatusChange SelectLastStatus(int id)    //конкретная заявка
+        {
+            var request = new Models.DTO.RequestStatusChange();
+            using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
+            {
+                connection.Open();
+                OracleCommand oraCommand = new OracleCommand("SELECT req.REQUEST_ID, req_st.REQUEST_STATUS_ID_ACTUAL, req_st.REQUEST_STATUS_ID_OLD FROM system.REQUEST  req"
+                                                               + " join system.REQUEST_STATUS_CHANGE  req_st on req.request_id = req_st.REQUEST_ID"
+                                                               + " WHERE req.REQUEST_ID = :id AND req.REQUEST_ID IN(SELECT req_st.REQUEST_ID from system.REQUEST_STATUS_CHANGE req_st"
+                                                               + " GROUP BY req_st.REQUEST_ID HAVING MAX(req_st.REQUEST_STATUS_ID_ACTUAL) = 1)", connection);
+                oraCommand.Parameters.Add("id", id);
+                OracleDataReader oraReader = oraCommand.ExecuteReader();
+                if (oraReader.HasRows)
+                    while (oraReader.Read())
+                    {
+                        var temp = new Models.DTO.RequestStatusChange();
+                        temp.request_id = oraReader.GetInt32(0);
+                        temp.new_status = oraReader.GetValue(1) == DBNull.Value ? temp.old_status = null : (int)oraReader.GetInt32(1);
+                        temp.old_status = oraReader.GetValue(2) == DBNull.Value ? temp.new_status = null : (int)oraReader.GetInt32(2);
+                        request = temp;
+                    }
+            }
+            return request;
+        }
 
 
         public int Select(string query, IEnumerable<OracleParameter> param = null, string connectionString = null)

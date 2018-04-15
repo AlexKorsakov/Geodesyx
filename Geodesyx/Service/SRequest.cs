@@ -33,13 +33,17 @@ namespace Geodesyx.Service
 
         public IEnumerable<Models.DTO.Request> SelectNewRequests()  //новые заявки
         {
-            List<Models.DTO.Request> requests = new List<Models.DTO.Request>();
+            var requests = new List<Models.DTO.Request>();
             using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
             {
                 connection.Open();
+                /*
                 OracleCommand oraCommand = new OracleCommand("SELECT req.REQUEST_ID, req.REQUEST_NAME, req.DESCRIPTION FROM system.REQUEST  req "
                                                               +  "right join system.REQUEST_STATUS_CHANGE  req_st on req.request_id = req_st.REQUEST_ID " 
-                                                              +  "WHERE req_st.REQUEST_STATUS_ID_ACTUAL = 1", connection);
+                                                              +  "WHERE req_st.REQUEST_STATUS_ID_ACTUAL = 1", connection);*/
+                OracleCommand oraCommand = new OracleCommand("SELECT req.REQUEST_ID, req.REQUEST_NAME, req.DESCRIPTION FROM system.REQUEST  req "
+                                                              + "WHERE req.REQUEST_ID IN (SELECT req_st.REQUEST_ID from system.REQUEST_STATUS_CHANGE req_st "
+                                                              + "GROUP BY req_st.REQUEST_ID HAVING MAX(req_st.REQUEST_STATUS_ID_ACTUAL) = 1) ORDER by req.REQUEST_ID desc", connection);
                 OracleDataReader oraReader = oraCommand.ExecuteReader();
                 if (oraReader.HasRows)
                     while (oraReader.Read())

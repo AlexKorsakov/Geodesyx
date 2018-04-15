@@ -11,6 +11,8 @@ namespace Geodesyx.Controllers
         // GET: BrigadeLead
         public ActionResult Index()
         {
+
+
             return View();
         }
 
@@ -20,11 +22,6 @@ namespace Geodesyx.Controllers
             return View();
         }
 
-        // GET: BrigadeLead/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
         // POST: BrigadeLead/Create
         [HttpPost]

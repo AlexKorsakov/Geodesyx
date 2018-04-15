@@ -25,31 +25,61 @@ namespace Geodesyx.Service
             else
                 return -1;
         }
+        
 
-        /*
-        public IEnumerable<Models.DTO.TaskStatusChange> SelectNewServices()  //новые задачи
+        public IEnumerable<Models.DTO.TaskStatusChange> Select(List<int> ids)
+        {
+            var list = new List<Models.DTO.TaskStatusChange>();
+            foreach (var item in ids)
+            {
+                int id = item;
+                using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
+                {
+                    connection.Open();
+                    OracleCommand oraCommand = new OracleCommand("SELECT * "
+                                                                  + "FROM system.TASK_STATUS_CHANGE WHERE TASK_ID = :id", connection);
+                    oraCommand.Parameters.Add("id", id);
+                    OracleDataReader oraReader = oraCommand.ExecuteReader();
+                    if (oraReader.HasRows)
+                        while (oraReader.Read())
+                        {
+                            var temp = new Models.DTO.TaskStatusChange();
+                            temp.id = oraReader.GetInt32(0);
+                            temp.old_status = oraReader.GetValue(1) == DBNull.Value ? temp.old_status = null : (int)oraReader.GetInt32(1);
+                            temp.new_status = oraReader.GetValue(2) == DBNull.Value ? temp.new_status = null : (int)oraReader.GetInt32(2);
+                            temp.task_id = oraReader.GetInt32(3);
+                            temp.change_date = oraReader.GetDateTime(4);
+                            list.Add(temp);
+                        }
+                }
+            }
+            return list;
+        }
+        
+        public IEnumerable<Models.DTO.TaskStatusChange> SelectNewTasks()  //новые задачи
         {
             List<Models.DTO.TaskStatusChange> requests = new List<Models.DTO.TaskStatusChange>();
             using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
             {
                 connection.Open();  
-                OracleCommand oraCommand = new OracleCommand("SELECT req.REQUEST_ID, req.REQUEST_NAME, req.DESCRIPTION FROM system.REQUEST  req "
-                                                              + "right join system.REQUEST_STATUS_CHANGE  req_st on req.request_id = req_st.REQUEST_ID "
-                                                              + "WHERE req_st.REQUEST_STATUS_ID_ACTUAL = 1", connection);
+                OracleCommand oraCommand = new OracleCommand("SELECT t.TASK_ID, tsc.TASK_STATUS_ID_ACTUAL, tsc.TASK_STATUS_ID_OLD, tsc.CHANGE_DATE  "
+                                                              + "FROM system.TASK  t join system.TASK_STATUS_CHANGE  tsc on t.TASK_ID = tsc.TASK_ID "
+                                                              + "WHERE t.TASK_ID IN(SELECT tsc.TASK_ID from system.TASK_STATUS_CHANGE tsc "
+                                                              + "GROUP BY tsc.TASK_ID HAVING MAX(tsc.TASK_STATUS_ID_ACTUAL) =1) ", connection);
                 OracleDataReader oraReader = oraCommand.ExecuteReader();
                 if (oraReader.HasRows)
                     while (oraReader.Read())
                     {
                         var temp = new Models.DTO.TaskStatusChange();
                         temp.id = oraReader.GetInt32(0);
-                        temp.task_note = oraReader.GetString(1);
-                        temp.address_id = oraReader.GetInt32(2);
-                        temp.service_id = oraReader.GetInt32(3);
+                        temp.new_status = oraReader.GetValue(1) == DBNull.Value ? temp.new_status = null : (int)oraReader.GetInt32(1);
+                        temp.old_status = oraReader.GetValue(2) == DBNull.Value ? temp.old_status = null : (int)oraReader.GetInt32(2);
+                        temp.change_date = oraReader.GetDateTime(3);
                         requests.Add(temp);
                     }
             }
             return requests;
         }
-        */
+        
     }
 }

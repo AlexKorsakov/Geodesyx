@@ -60,12 +60,29 @@ namespace Geodesyx
     }
 
     [ServiceContract]
+    public interface IRequest_Task
+    {
+        [OperationContract]
+        int Insert(Models.DTO.Request_Task input);
+    }
+
+    [ServiceContract]
+    public interface IRequestStatus
+    {
+        [OperationContract]
+        IEnumerable<Models.DTO.RequestStatus> SelectAll();
+    }
+
+
+    [ServiceContract]
     public interface IRequestStatusChange
     {
         [OperationContract]
         int Insert(Models.DTO.RequestStatusChange input);
         [OperationContract]
-        int Select(string query, IEnumerable<Oracle.ManagedDataAccess.Client.OracleParameter> param = null, string connectionString = null);
+        IEnumerable<Models.DTO.RequestStatusChange> Select(List<int> ids);
+        [OperationContract]
+        Models.DTO.RequestStatusChange SelectLastStatus(int id);
     }
 
     [ServiceContract]
@@ -89,6 +106,13 @@ namespace Geodesyx
     }
 
     [ServiceContract]
+    public interface ITaskStatus
+    {
+        [OperationContract]
+        IEnumerable<Models.DTO.TaskStatus> SelectAll();
+    }
+
+    [ServiceContract]
     public interface ITaskStatusChange
     {
         /*
@@ -97,6 +121,9 @@ namespace Geodesyx
         */
         [OperationContract]
         int Insert(Models.DTO.TaskStatusChange input);
+
+        [OperationContract]
+        IEnumerable<Models.DTO.TaskStatusChange> Select(List<int> ids);
     }
     /*
     [ServiceContract]

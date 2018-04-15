@@ -184,9 +184,12 @@
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="Service\SRequest.cs" />
+    <Compile Include="Service\SRequestStatus.cs" />
     <Compile Include="Service\SRequestStatusChange.cs" />
+    <Compile Include="Service\SRequest_Task.cs" />
     <Compile Include="Service\SService.cs" />
     <Compile Include="Service\STask.cs" />
+    <Compile Include="Service\STaskStatus.cs" />
     <Compile Include="Service\STaskStatusChange.cs" />
   </ItemGroup>
   <ItemGroup>

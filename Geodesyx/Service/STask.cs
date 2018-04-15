@@ -15,7 +15,7 @@ namespace Geodesyx.Service
             List<Models.DTO.Task> requests = new List<Models.DTO.Task>();
             using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
             {
-                connection.Open();  //исправить
+                connection.Open();  
                 OracleCommand oraCommand = new OracleCommand("SELECT tsk.TASK_ID, tsk.NOTE, tsk.ADDRESS_ID, tsk.SERVICE_ID "
                                                               + "FROM system.task  tsk right join system.task_STATUS_CHANGE tsk_st on tsk.TASK_ID = tsk_st.TASK_ID "
                                                               + "WHERE tsk_st.TASK_STATUS_ID_ACTUAL = 1", connection);

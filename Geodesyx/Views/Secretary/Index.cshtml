@@ -17,8 +17,8 @@
             <h2>Управление</h2>
 
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Заявки</a></li>
-                <li><a data-toggle="tab" href="#menu1">Задания</a></li>
+                <li class="active"><a id="tab1" data-toggle="tab" href="#home">Заявки</a></li>
+                <li><a data-toggle="tab" id="tab2" href="#menu1">Задания</a></li>
             </ul>
 
             <div class="tab-content">
@@ -30,14 +30,30 @@
                                     <th>Название</th>
                                     <th>Описание</th>
                                     <th>Статус</th>
+                                    <th>Дата</th>
                                 </tr>
-                                @foreach (var item in ViewBag.RequestList)
+                                @foreach (var item in ViewBag.RequestStatusChangeList)
                                 {
                                     <tr>
-                                        <td>@item.name</td>
-                                        <td>@item.description</td>
-                                        <td>
-                                            
+                                            @foreach (var subitem in ViewBag.RequestList) {
+                                                if (subitem.id == item.request_id)
+                                                {
+                                                    <td>@subitem.name</td>
+                                                    <td>@subitem.description</td>
+                                                    break;
+                                                }
+                                            }
+                                            @foreach (var subitem in ViewBag.RequestStatusList) {
+                                                if (subitem.id == item.new_status)
+                                                {
+                                                    <td>
+                                                        @subitem.requestStatusName
+                                                    </td>
+                                                    break;
+                                                }
+                                            }
+                                        <td>                                                        
+                                            @item.change_date                                                    
                                         </td>
                                     </tr>
                                 }
@@ -72,18 +88,32 @@
                         <div class="col-md-12">
                             <table id="tasks" class="table table-striped">
                                 <tr>
-                                    <th>Название</th>
-                                    <th>Описание</th>
+                                    <th>ID</th>
+                                    <th>Заметка</th>
                                     <th>Статус</th>
+                                    <th>Создано</th>
                                 </tr>
-                                @foreach (var item in ViewBag.TaskList)
+                                @foreach (var item in ViewBag.TaskStatusChangeList)
                                 {
                                     <tr>
-                                        <td>@item.task_note</td>
-                                        <td>@item.service_id</td>
-                                        <td>
-                                            
-                                        </td>
+                                    <td> @item.id </td>
+                                        @foreach (var subitem in ViewBag.TaskList) {
+                                                if (subitem.id == item.task_id)
+                                                {
+                                                    <td>@subitem.task_note</td>
+                                                    break;
+                                                }
+                                            }
+                                            @foreach (var subitem in ViewBag.TaskStatusList) {
+                                                if (subitem.id == item.new_status)
+                                                {
+                                                    <td>
+                                                        @subitem.name
+                                                    </td>
+                                                    break;
+                                                }
+                                            }
+                                        <td> @item.change_date </td>
                                     </tr>
                                 }
                             </table>
@@ -202,10 +232,5 @@
                 myMap.balloon.close();
             }
         });
-    }
-
-    function AddTask() {
-        jQuery("#tasks").html(jQuery(this).parents(''));
-        console.log();
     }
 </script>
