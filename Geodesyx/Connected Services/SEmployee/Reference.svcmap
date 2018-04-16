@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f6c2398e-eb29-425e-a25b-71f733d37f95" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/SEmployee.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SEmployee.xsd" MetadataType="Schema" ID="52906b7c-3b0b-4b90-bf45-b00db764ab9a" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd6" />
+    <MetadataFile FileName="SEmployee.wsdl" MetadataType="Wsdl" ID="59a0107f-2d21-477f-8c23-f0f53fb90beb" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?wsdl" />
+    <MetadataFile FileName="SEmployee.disco" MetadataType="Disco" ID="b8506eb5-6025-4916-8cf3-f3a35d6a2985" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?disco" />
+    <MetadataFile FileName="SEmployee1.xsd" MetadataType="Schema" ID="ea8dbdf6-3424-4ea6-8747-1c38fde7bfee" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd3" />
+    <MetadataFile FileName="SEmployee2.xsd" MetadataType="Schema" ID="cc216cb4-f4d4-4272-a358-aa511813ab51" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd2" />
+    <MetadataFile FileName="SEmployee3.xsd" MetadataType="Schema" ID="d08628c5-2b62-4eed-9e02-855b01f05cb7" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd5" />
+    <MetadataFile FileName="SEmployee4.xsd" MetadataType="Schema" ID="baa793cb-dbee-4411-a665-9329a7329c81" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd0" />
+    <MetadataFile FileName="SEmployee5.xsd" MetadataType="Schema" ID="ae664c90-6181-418b-a145-fff601edabac" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd4" />
+    <MetadataFile FileName="SEmployee6.xsd" MetadataType="Schema" ID="069f96dd-71bf-4ce0-be09-f31802da19f8" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd1" />
+    <MetadataFile FileName="SEmployee7.xsd" MetadataType="Schema" ID="43b5b3b5-37fb-459d-9676-1cde59e0a856" SourceId="1" SourceUrl="http://localhost:21930/SEmployee.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

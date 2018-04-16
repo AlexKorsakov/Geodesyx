@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Geodesyx.Service;
 
 namespace Geodesyx.Controllers
 {
@@ -31,7 +30,7 @@ namespace Geodesyx.Controllers
             ViewBag.BrigadeList = service_brigades.SelectBrigades();
 
             //законченные задачи
-            var service_brigade_end_tasks = new SBrigadeEndedTasks();
+            var service_brigade_end_tasks = new SBrigadeEndedTasks.BrigadeEndedTasksClient();
             ViewBag.EndedTasksList = service_brigade_end_tasks.SelectAll();
 
 

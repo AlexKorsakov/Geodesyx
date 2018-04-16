@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f3eb894f-173b-4635-afd2-ecfb711d109d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/SBrigadeEndedTasks.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SBrigadeEndedTasks.wsdl" MetadataType="Wsdl" ID="27a4f09d-d81b-41ea-8e29-0627d8079f7c" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?wsdl" />
+    <MetadataFile FileName="SBrigadeEndedTasks.xsd" MetadataType="Schema" ID="7a97df90-6d5c-4039-8e0d-5b7ecba9d753" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd2" />
+    <MetadataFile FileName="SBrigadeEndedTasks1.xsd" MetadataType="Schema" ID="e114a082-4c5e-4527-998f-8532b253a0ce" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd3" />
+    <MetadataFile FileName="SBrigadeEndedTasks2.xsd" MetadataType="Schema" ID="8386f765-8490-42a9-a857-cdcea740940f" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd0" />
+    <MetadataFile FileName="SBrigadeEndedTasks.disco" MetadataType="Disco" ID="4ef65b3c-31f1-45f6-ad2a-c1c1435e9a3a" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?disco" />
+    <MetadataFile FileName="SBrigadeEndedTasks3.xsd" MetadataType="Schema" ID="0bb7a9e0-f891-4b31-8444-17e68aa7e426" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd6" />
+    <MetadataFile FileName="SBrigadeEndedTasks4.xsd" MetadataType="Schema" ID="811905e5-7101-4556-bd27-ecfe281734cf" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd7" />
+    <MetadataFile FileName="SBrigadeEndedTasks5.xsd" MetadataType="Schema" ID="436f97a4-b041-4efd-9784-917c2d40082a" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd1" />
+    <MetadataFile FileName="SBrigadeEndedTasks6.xsd" MetadataType="Schema" ID="adb44345-4031-4f47-8ef2-3619dad087c0" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd5" />
+    <MetadataFile FileName="SBrigadeEndedTasks7.xsd" MetadataType="Schema" ID="89cac24f-0f60-40d4-b409-d199373092c1" SourceId="1" SourceUrl="http://localhost:21930/SBrigadeEndedTasks.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -166,6 +166,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SBrigadeEndedTasks\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\SBrigadeInWorkTasks\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +182,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\SBrigade\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SEmployeeRole\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SEmployee\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -228,44 +243,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DTO\VBrigadeEndedTasks.cs" />
-    <Compile Include="Models\DTO\VBrigadeInWorkTasks.cs" />
-    <Compile Include="Models\DTO\VBrigadeNewTasks.cs" />
-    <Compile Include="Service\SBrigade.cs" />
-    <Compile Include="Service\IService1.cs" />
     <Compile Include="Models\Authentication.cs" />
-    <Compile Include="Models\DTO\Address.cs" />
-    <Compile Include="Models\DTO\Brigade.cs" />
-    <Compile Include="Models\DTO\Employee.cs" />
-    <Compile Include="Models\DTO\EmployeeRole.cs" />
-    <Compile Include="Models\DTO\TaskStatus.cs" />
-    <Compile Include="Models\DTO\TaskStatusChange.cs" />
-    <Compile Include="Models\DTO\Request.cs" />
-    <Compile Include="Models\DTO\RequestStatus.cs" />
-    <Compile Include="Models\DTO\RequestStatusChange.cs" />
-    <Compile Include="Models\DTO\Request_Task.cs" />
-    <Compile Include="Models\DTO\Service.cs" />
-    <Compile Include="Models\DTO\Task.cs" />
-    <Compile Include="Models\DTO\Task_Service.cs" />
-    <Compile Include="Models\DTO\ABase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\SAddress.cs" />
-    <Compile Include="Service\SBrigadeEndedTasks.cs" />
-    <Compile Include="Service\SBrigadeInWorkTasks.cs" />
-    <Compile Include="Service\SBrigadeNewTasks.cs" />
-    <Compile Include="Service\SEmployee.cs" />
-    <Compile Include="Service\SEmployeeRole.cs" />
-    <Compile Include="Service\Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Service\SRequest.cs" />
-    <Compile Include="Service\SRequestStatus.cs" />
-    <Compile Include="Service\SRequestStatusChange.cs" />
-    <Compile Include="Service\SRequest_Task.cs" />
-    <Compile Include="Service\SService.cs" />
-    <Compile Include="Service\STask.cs" />
-    <Compile Include="Service\STaskStatus.cs" />
-    <Compile Include="Service\STaskStatusChange.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DBService\Service1.disco" />
@@ -288,6 +267,31 @@
     <None Include="Connected Services\SAddress\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks.wsdl" />
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks7.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks.wsdl" />
     <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks.xsd">
@@ -345,6 +349,56 @@
     <None Include="Connected Services\SBrigade\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole.wsdl" />
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee.wsdl" />
+    <None Include="Connected Services\SEmployee\SEmployee.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee7.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange.wsdl" />
     <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange.xsd">
@@ -566,6 +620,27 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SEmployeeRole\SEmployeeRole.disco" />
+    <None Include="Connected Services\SEmployeeRole\configuration91.svcinfo" />
+    <None Include="Connected Services\SEmployeeRole\configuration.svcinfo" />
+    <None Include="Connected Services\SEmployeeRole\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SEmployee\SEmployee.disco" />
+    <None Include="Connected Services\SEmployee\configuration91.svcinfo" />
+    <None Include="Connected Services\SEmployee\configuration.svcinfo" />
+    <None Include="Connected Services\SEmployee\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SBrigadeEndedTasks\SBrigadeEndedTasks.disco" />
+    <None Include="Connected Services\SBrigadeEndedTasks\configuration91.svcinfo" />
+    <None Include="Connected Services\SBrigadeEndedTasks\configuration.svcinfo" />
+    <None Include="Connected Services\SBrigadeEndedTasks\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -718,6 +793,9 @@
     <Content Include="Properties\DataSources\DTOlib.TaskStatus.datasource" />
     <Content Include="Properties\DataSources\DTOlib.VBrigadeNewTasks.datasource" />
     <Content Include="Properties\DataSources\DTOlib.VBrigadeInWorkTasks.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.EmployeeRole.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.Employee.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.VBrigadeEndedTasks.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -729,7 +807,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Service\Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -772,9 +849,12 @@
     <WCFMetadataStorage Include="Connected Services\DBService\" />
     <WCFMetadataStorage Include="Connected Services\OracleWcfService\" />
     <WCFMetadataStorage Include="Connected Services\SAddress\" />
+    <WCFMetadataStorage Include="Connected Services\SBrigadeEndedTasks\" />
     <WCFMetadataStorage Include="Connected Services\SBrigadeInWorkTasks\" />
     <WCFMetadataStorage Include="Connected Services\SBrigadeNewTasks\" />
     <WCFMetadataStorage Include="Connected Services\SBrigade\" />
+    <WCFMetadataStorage Include="Connected Services\SEmployeeRole\" />
+    <WCFMetadataStorage Include="Connected Services\SEmployee\" />
     <WCFMetadataStorage Include="Connected Services\SRequestStatusChange\" />
     <WCFMetadataStorage Include="Connected Services\SRequestStatus\" />
     <WCFMetadataStorage Include="Connected Services\SRequest\" />

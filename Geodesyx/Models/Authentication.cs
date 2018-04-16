@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Geodesyx.Models.DTO;
-using Geodesyx.Service;
+using DTOlib;
 
 namespace Geodesyx.Models
 {
@@ -14,7 +13,7 @@ namespace Geodesyx.Models
         public EmployeeRole GetRole(Employee user )
         {
             try { 
-                var service_user_role = new SEmployeeRole();
+                var service_user_role = new SEmployeeRole.EmployeeRoleClient();
                 var role = service_user_role.Select(user.employeeRole_id);
                 return role;
             }
@@ -28,7 +27,7 @@ namespace Geodesyx.Models
         {
             try
             {
-                var service_user = new SEmployee();
+                var service_user = new SEmployee.EmployeeClient();
                 var user = service_user.Select(username, password);
                 var role = GetRole(user);
                 return user;
