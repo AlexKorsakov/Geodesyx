@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7e9d9a81-dc84-445f-abda-fe183e69adbe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/STask.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="STask.xsd" MetadataType="Schema" ID="3b1beb94-1c0d-4679-a2ae-62f5f5ec4247" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd5" />
+    <MetadataFile FileName="STask.disco" MetadataType="Disco" ID="7550743c-19ab-4ec9-83ad-7e92e9017da4" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?disco" />
+    <MetadataFile FileName="STask1.xsd" MetadataType="Schema" ID="8dc3e43a-7d25-4889-ac5d-45b411419922" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd0" />
+    <MetadataFile FileName="STask2.xsd" MetadataType="Schema" ID="2a00ce6d-1986-476d-adf1-1654817c4f74" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd1" />
+    <MetadataFile FileName="STask3.xsd" MetadataType="Schema" ID="2844277f-b1ae-4059-af8e-5c013f7a5b6c" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd2" />
+    <MetadataFile FileName="STask.wsdl" MetadataType="Wsdl" ID="a210565f-aeb5-4fd0-a54b-b1f8b6817704" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?wsdl" />
+    <MetadataFile FileName="STask4.xsd" MetadataType="Schema" ID="91b3a398-312b-4f52-8462-464db112ab0f" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd4" />
+    <MetadataFile FileName="STask5.xsd" MetadataType="Schema" ID="3a0337ed-a74c-4972-b0fe-3df253091037" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd3" />
+    <MetadataFile FileName="STask6.xsd" MetadataType="Schema" ID="78ca432e-ba51-48a6-a8ba-411421f1392a" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd6" />
+    <MetadataFile FileName="STask7.xsd" MetadataType="Schema" ID="7918e8d1-7866-475b-bd34-9181f76458b1" SourceId="1" SourceUrl="http://localhost:21930/STask.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="OracleWcfService.STaskStatusChange" CodeBehind="STaskStatusChange.svc.cs" %>

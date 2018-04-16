@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Oracle.DataAccess.Client;
 using Geodesyx.Service;
 using Geodesyx.Models;
-using DTOlib;
+using Geodesyx.OracleWcfService;
 
 namespace Geodesyx.Controllers
 {
@@ -32,42 +32,42 @@ namespace Geodesyx.Controllers
             if (!Auth())
                 return Redirect("/Home/Index");
 
-            //OracleWcfServiceClient proxy = new OracleWcfServiceClient();
+            
 
             //заявки
-            var service_request = new SRequest();
+            var service_request = new SRequest.RequestClient();
             ViewBag.RequestList = service_request.SelectNewRequests();
             //статусы заявки
-            var service_request_status = new SRequestStatus();
+            var service_request_status = new SRequestStatus.RequestStatusClient();
             ViewBag.RequestStatusList = service_request_status.SelectAll();
             //связь статусы-заявки
-            var service_request_status_change = new SRequestStatusChange();
+            var service_request_status_change = new SRequestStatusChange.RequestStatusChangeClient();
             var ids = new List<int>();
             foreach (var item in ViewBag.RequestList)
                 ids.Add(item.id);
             ViewBag.RequestStatusChangeList = service_request_status_change.Select(ids);
             //адреса
-            var service_address = new SAddress();
+            var service_address = new SAddress.AddressClient();
             ViewBag.AddressList = service_address.SelectAddresses();
             //услуги
-            var service_sevices = new SService();
+            var service_sevices = new SService.ServiceClient();
             ViewBag.ServiceList = service_sevices.SelectServices();
             //задачи
-            var service_tasks = new STask();
+            var service_tasks = new STask.TaskClient();
             ViewBag.TaskList = service_tasks.SelectNewTasks();
 
             //статусы задачи
-            var service_task_status = new STaskStatus();
+            var service_task_status = new STaskStatus.TaskStatusClient();
             ViewBag.TaskStatusList = service_task_status.SelectAll();
             //связь статусы-задачи
-            var service_task_status_change = new STaskStatusChange();
+            var service_task_status_change = new STaskStatusChange.TaskStatusChangeClient();
             ids = new List<int>();
             foreach (var item in ViewBag.TaskList)
                 ids.Add(item.id);
             ViewBag.TaskStatusChangeList = service_task_status_change.Select(ids);
 
             //бригады
-            var service_brigades = new SBrigade();
+            var service_brigades = new SBrigade.BrigadeClient();
             ViewBag.BrigadeList = service_brigades.SelectBrigades();
 
             return View();
@@ -77,14 +77,14 @@ namespace Geodesyx.Controllers
         public ActionResult AddRequest(FormCollection form)
         {
             ViewBag.ErrorMessage = "";
-            var service_request = new SRequest();
-            var new_request = new Models.DTO.Request();
+            var service_request = new SRequest.RequestClient();
+            var new_request = new DTOlib.Request();
             new_request.name = form["name"];
             new_request.description = form["description"];
             int id = service_request.Insert(new_request);
 
-            SRequestStatusChange service_request_st_change = new SRequestStatusChange();
-            var request_st_change = new Models.DTO.RequestStatusChange();
+            var service_request_st_change = new SRequestStatusChange.RequestStatusChangeClient();
+            var request_st_change = new DTOlib.RequestStatusChange();
             request_st_change.old_status = null;
             request_st_change.new_status = 1;
             request_st_change.request_id = id;
@@ -102,25 +102,25 @@ namespace Geodesyx.Controllers
         [HttpPost]
         public ActionResult AddTask(FormCollection form)
         {
-            var service_task = new STask();
-            var service_task_st_change = new STaskStatusChange();
-            var service_request_task = new SRequest_Task();
-            var service_request_st_change = new SRequestStatusChange();
-            var service_request = new SRequest();
+            var service_task = new STask.TaskClient();
+            var service_task_st_change = new STaskStatusChange.TaskStatusChangeClient();
+            var service_request_task = new SRequest_Task.Request_TaskClient();
+            var service_request_st_change = new SRequestStatusChange.RequestStatusChangeClient();
+            var service_request = new SRequest.RequestClient();
 
-            var new_task = new Models.DTO.Task();
-            var task_st_change = new Models.DTO.TaskStatusChange();
-            var request_task = new Models.DTO.Request_Task();
-            var request_st_change = new Models.DTO.RequestStatusChange();
-            var request = new Models.DTO.Request();
+            var new_task = new DTOlib.Task();
+            var task_st_change = new DTOlib.TaskStatusChange();
+            var request_task = new DTOlib.Request_Task();
+            var request_st_change = new DTOlib.RequestStatusChange();
+            var request = new DTOlib.Request();
 
             int id_adrc = -1;
             if (form["address-new"] == "")
                 Int32.TryParse(form["address"], out id_adrc);
             else
             {
-                var service_address = new SAddress();
-                var new_address = new Models.DTO.Address();
+                var service_address = new SAddress.AddressClient();
+                var new_address = new DTOlib.Address();
                 string s = form["X"];
                 float.TryParse(form["X"].Replace(".", ","), out new_address.X);
                 float.TryParse(form["Y"].Replace(".", ","), out new_address.Y);

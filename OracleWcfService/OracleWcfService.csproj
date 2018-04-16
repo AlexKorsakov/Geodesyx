@@ -66,11 +66,24 @@
   <ItemGroup>
     <Content Include="OracleWcfService.svc" />
     <Content Include="SAddress.svc" />
+    <Content Include="SBrigade.svc" />
+    <Content Include="SBrigadeEndedTasks.svc" />
+    <Content Include="SBrigadeInWorkTasks.svc" />
+    <Content Include="SBrigadeNewTasks.svc" />
+    <Content Include="SEmployee.svc" />
+    <Content Include="SEmployeeRole.svc" />
+    <Content Include="SRequest.svc" />
+    <Content Include="SRequestStatus.svc" />
+    <Content Include="SRequestStatusChange.svc" />
+    <Content Include="SRequest_Task.svc" />
+    <Content Include="SService.svc" />
+    <Content Include="STask.svc" />
+    <Content Include="STaskStatus.svc" />
+    <Content Include="STaskStatusChange.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IOracleWcfService.cs" />
-    <Compile Include="ISAddress.cs" />
     <Compile Include="OracleWcfService.svc.cs">
       <DependentUpon>OracleWcfService.svc</DependentUpon>
     </Compile>
@@ -78,20 +91,48 @@
     <Compile Include="SAddress.svc.cs">
       <DependentUpon>SAddress.svc</DependentUpon>
     </Compile>
-    <Compile Include="SBrigade.cs" />
-    <Compile Include="SBrigadeEndedTasks.cs" />
-    <Compile Include="SBrigadeInWorkTasks.cs" />
-    <Compile Include="SBrigadeNewTasks.cs" />
-    <Compile Include="SEmployee.cs" />
-    <Compile Include="SEmployeeRole.cs" />
-    <Compile Include="SRequest.cs" />
-    <Compile Include="SRequestStatus.cs" />
-    <Compile Include="SRequestStatusChange.cs" />
-    <Compile Include="SRequest_Task.cs" />
-    <Compile Include="SService.cs" />
-    <Compile Include="STask.cs" />
-    <Compile Include="STaskStatus.cs" />
-    <Compile Include="STaskStatusChange.cs" />
+    <Compile Include="SBrigade.svc.cs">
+      <DependentUpon>SBrigade.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SBrigadeEndedTasks.svc.cs">
+      <DependentUpon>SBrigadeEndedTasks.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SBrigadeInWorkTasks.svc.cs">
+      <DependentUpon>SBrigadeInWorkTasks.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SBrigadeNewTasks.svc.cs">
+      <DependentUpon>SBrigadeNewTasks.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SEmployee.svc.cs">
+      <DependentUpon>SEmployee.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SEmployeeRole.svc.cs">
+      <DependentUpon>SEmployeeRole.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SRequest.svc.cs">
+      <DependentUpon>SRequest.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SRequestStatus.svc.cs">
+      <DependentUpon>SRequestStatus.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SRequestStatusChange.svc.cs">
+      <DependentUpon>SRequestStatusChange.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SRequest_Task.svc.cs">
+      <DependentUpon>SRequest_Task.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SService.svc.cs">
+      <DependentUpon>SService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="STask.svc.cs">
+      <DependentUpon>STask.svc</DependentUpon>
+    </Compile>
+    <Compile Include="STaskStatus.svc.cs">
+      <DependentUpon>STaskStatus.svc</DependentUpon>
+    </Compile>
+    <Compile Include="STaskStatusChange.svc.cs">
+      <DependentUpon>STaskStatusChange.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

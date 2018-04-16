@@ -161,6 +161,66 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SAddress\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SBrigadeInWorkTasks\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SBrigadeNewTasks\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SBrigade\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRequestStatusChange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRequestStatus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRequest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRequest_Task\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\STaskStatusChange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\STaskStatus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\STask\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BrigadeLeadController.cs" />
     <Compile Include="Controllers\DirectorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -222,6 +282,290 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SAddress\SAddress.disco" />
+    <None Include="Connected Services\SAddress\configuration91.svcinfo" />
+    <None Include="Connected Services\SAddress\configuration.svcinfo" />
+    <None Include="Connected Services\SAddress\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks.wsdl" />
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks.wsdl" />
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade.disco" />
+    <None Include="Connected Services\SBrigade\configuration91.svcinfo" />
+    <None Include="Connected Services\SBrigade\configuration.svcinfo" />
+    <None Include="Connected Services\SBrigade\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange.wsdl" />
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus.wsdl" />
+    <None Include="Connected Services\SRequestStatus\SRequestStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest.disco" />
+    <None Include="Connected Services\SRequest\configuration91.svcinfo" />
+    <None Include="Connected Services\SRequest\configuration.svcinfo" />
+    <None Include="Connected Services\SRequest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SRequestStatus\SRequestStatus.disco" />
+    <None Include="Connected Services\SRequestStatus\configuration91.svcinfo" />
+    <None Include="Connected Services\SRequestStatus\configuration.svcinfo" />
+    <None Include="Connected Services\SRequestStatus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SRequestStatusChange\SRequestStatusChange.disco" />
+    <None Include="Connected Services\SRequestStatusChange\configuration91.svcinfo" />
+    <None Include="Connected Services\SRequestStatusChange\configuration.svcinfo" />
+    <None Include="Connected Services\SRequestStatusChange\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task.wsdl" />
+    <None Include="Connected Services\SRequest_Task\SRequest_Task.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService.wsdl" />
+    <None Include="Connected Services\SService\SService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SService\SService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange.wsdl" />
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus.wsdl" />
+    <None Include="Connected Services\STaskStatus\STaskStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask.disco" />
+    <None Include="Connected Services\STask\configuration91.svcinfo" />
+    <None Include="Connected Services\STask\configuration.svcinfo" />
+    <None Include="Connected Services\STask\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\STaskStatusChange\STaskStatusChange.disco" />
+    <None Include="Connected Services\STaskStatusChange\configuration91.svcinfo" />
+    <None Include="Connected Services\STaskStatusChange\configuration.svcinfo" />
+    <None Include="Connected Services\STaskStatusChange\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SRequest_Task\SRequest_Task.disco" />
+    <None Include="Connected Services\SRequest_Task\configuration91.svcinfo" />
+    <None Include="Connected Services\SRequest_Task\configuration.svcinfo" />
+    <None Include="Connected Services\SRequest_Task\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SService\SService.disco" />
+    <None Include="Connected Services\SService\configuration91.svcinfo" />
+    <None Include="Connected Services\SService\configuration.svcinfo" />
+    <None Include="Connected Services\SService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\STaskStatus\STaskStatus.disco" />
+    <None Include="Connected Services\STaskStatus\configuration91.svcinfo" />
+    <None Include="Connected Services\STaskStatus\configuration.svcinfo" />
+    <None Include="Connected Services\STaskStatus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SBrigadeNewTasks\SBrigadeNewTasks.disco" />
+    <None Include="Connected Services\SBrigadeNewTasks\configuration91.svcinfo" />
+    <None Include="Connected Services\SBrigadeNewTasks\configuration.svcinfo" />
+    <None Include="Connected Services\SBrigadeNewTasks\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SBrigadeInWorkTasks\SBrigadeInWorkTasks.disco" />
+    <None Include="Connected Services\SBrigadeInWorkTasks\configuration91.svcinfo" />
+    <None Include="Connected Services\SBrigadeInWorkTasks\configuration.svcinfo" />
+    <None Include="Connected Services\SBrigadeInWorkTasks\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -263,6 +607,117 @@
     <None Include="Connected Services\OracleWcfService\OracleWcfService6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SAddress\SAddress.wsdl" />
+    <None Include="Connected Services\SAddress\SAddress.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SAddress\SAddress7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\DTOlib.Address.datasource" />
+    <None Include="Connected Services\SBrigade\SBrigade.wsdl" />
+    <None Include="Connected Services\SBrigade\SBrigade.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SBrigade\SBrigade7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\DTOlib.Brigade.datasource" />
+    <None Include="Connected Services\SRequest\SRequest.wsdl" />
+    <None Include="Connected Services\SRequest\SRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRequest\SRequest7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\DTOlib.Request.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.RequestStatus.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.RequestStatusChange.datasource" />
+    <None Include="Connected Services\STask\STask.wsdl" />
+    <None Include="Connected Services\STask\STask.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\STask\STask7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\DTOlib.Task.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.TaskStatusChange.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.Service.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.TaskStatus.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.VBrigadeNewTasks.datasource" />
+    <Content Include="Properties\DataSources\DTOlib.VBrigadeInWorkTasks.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -316,6 +771,18 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DBService\" />
     <WCFMetadataStorage Include="Connected Services\OracleWcfService\" />
+    <WCFMetadataStorage Include="Connected Services\SAddress\" />
+    <WCFMetadataStorage Include="Connected Services\SBrigadeInWorkTasks\" />
+    <WCFMetadataStorage Include="Connected Services\SBrigadeNewTasks\" />
+    <WCFMetadataStorage Include="Connected Services\SBrigade\" />
+    <WCFMetadataStorage Include="Connected Services\SRequestStatusChange\" />
+    <WCFMetadataStorage Include="Connected Services\SRequestStatus\" />
+    <WCFMetadataStorage Include="Connected Services\SRequest\" />
+    <WCFMetadataStorage Include="Connected Services\SRequest_Task\" />
+    <WCFMetadataStorage Include="Connected Services\SService\" />
+    <WCFMetadataStorage Include="Connected Services\STaskStatusChange\" />
+    <WCFMetadataStorage Include="Connected Services\STaskStatus\" />
+    <WCFMetadataStorage Include="Connected Services\STask\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTOlib\DTOlib.csproj">

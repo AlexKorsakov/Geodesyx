@@ -23,6 +23,21 @@ namespace OracleWcfService
         int SelectCurrentFromSequence(string sequence_name, string connectionString = null);
     }
 
+    [ServiceContract]
+    public interface IAddress
+    {
+        [OperationContract]
+        Address Select(int id);
+
+        [OperationContract]
+        IEnumerable<Address> SelectAddresses();
+
+        [OperationContract]
+        int Insert(Address input);
+
+        [OperationContract]
+        int Update(int id = -1, string name = null, float X = 0, float Y = 0);
+    }
 
     [ServiceContract]
     public interface IBrigade
@@ -112,7 +127,7 @@ namespace OracleWcfService
         RequestStatusChange SelectLastStatus(int id);
 
         [OperationContract]
-        int Select(string query, IEnumerable<OracleParameter> param = null, string connectionString = null);
+        int SelectQuery(string query, IEnumerable<OracleParameter> param = null, string connectionString = null);
     }
 
     [ServiceContract]

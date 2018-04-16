@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1dc14767-6dce-4ee1-ab9e-6632f85029ff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/SAddress.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SAddress.xsd" MetadataType="Schema" ID="f8cc6140-18ec-4036-8f91-4ef4675ce850" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd5" />
+    <MetadataFile FileName="SAddress1.xsd" MetadataType="Schema" ID="0ad02089-dfc0-4290-830d-3af0ef3f453a" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd2" />
+    <MetadataFile FileName="SAddress2.xsd" MetadataType="Schema" ID="84591c94-13bf-43b5-ba2c-df611d9c7575" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd7" />
+    <MetadataFile FileName="SAddress3.xsd" MetadataType="Schema" ID="cfd727b3-57cc-4e40-ac1c-37076394dd10" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd0" />
+    <MetadataFile FileName="SAddress4.xsd" MetadataType="Schema" ID="c15bbabe-7cfb-49f4-bc88-dcff14d6cf59" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd6" />
+    <MetadataFile FileName="SAddress5.xsd" MetadataType="Schema" ID="cbe6fba8-c524-4801-a2dd-a57fc79e8c47" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd3" />
+    <MetadataFile FileName="SAddress.disco" MetadataType="Disco" ID="0b4d0c2b-e991-4555-96f7-68b1142997ac" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?disco" />
+    <MetadataFile FileName="SAddress6.xsd" MetadataType="Schema" ID="1678f9a6-451a-4ec9-9256-bc829dd2182f" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd4" />
+    <MetadataFile FileName="SAddress.wsdl" MetadataType="Wsdl" ID="6f3c2ade-e171-43f5-a724-c35ebdad222a" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?wsdl" />
+    <MetadataFile FileName="SAddress7.xsd" MetadataType="Schema" ID="e51148f1-351e-418e-9e73-ef7ec170a568" SourceId="1" SourceUrl="http://localhost:21930/SAddress.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

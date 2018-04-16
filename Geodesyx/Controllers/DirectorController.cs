@@ -27,7 +27,7 @@ namespace Geodesyx.Controllers
             if (!Auth())
                 return Redirect("/Home/Index");
             //бригады
-            var service_brigades = new SBrigade();
+            var service_brigades = new SBrigade.BrigadeClient();
             ViewBag.BrigadeList = service_brigades.SelectBrigades();
 
             //законченные задачи

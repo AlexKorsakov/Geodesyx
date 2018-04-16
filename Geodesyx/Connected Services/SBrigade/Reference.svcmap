@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5a6ceecc-f50d-4db2-a60c-7180878acb76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/SBrigade.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SBrigade.xsd" MetadataType="Schema" ID="025de918-e593-43f6-b237-41d2414dc953" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd4" />
+    <MetadataFile FileName="SBrigade1.xsd" MetadataType="Schema" ID="d41e5758-d3a4-4beb-bcca-5b3a6fffe702" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd1" />
+    <MetadataFile FileName="SBrigade.wsdl" MetadataType="Wsdl" ID="b3ddecb6-ca54-4d91-a2de-e56002f793c8" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?wsdl" />
+    <MetadataFile FileName="SBrigade2.xsd" MetadataType="Schema" ID="0e6b118c-1881-406c-9eea-2ad118056101" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd6" />
+    <MetadataFile FileName="SBrigade.disco" MetadataType="Disco" ID="cb98e683-ac43-439b-bc0f-0c6a81841544" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?disco" />
+    <MetadataFile FileName="SBrigade3.xsd" MetadataType="Schema" ID="973f4339-318d-44b3-8c91-5bdd52027067" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd5" />
+    <MetadataFile FileName="SBrigade4.xsd" MetadataType="Schema" ID="78a784a8-da9d-40d1-8c7c-d0ddf7b9e4f0" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd7" />
+    <MetadataFile FileName="SBrigade5.xsd" MetadataType="Schema" ID="9596abdd-c1a5-402c-86eb-0ec54bedd77f" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd0" />
+    <MetadataFile FileName="SBrigade6.xsd" MetadataType="Schema" ID="4aea57e0-0f39-4180-a0b4-402bf676c22b" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd3" />
+    <MetadataFile FileName="SBrigade7.xsd" MetadataType="Schema" ID="7e666c9c-3ecc-4567-98d8-e2f70abc1853" SourceId="1" SourceUrl="http://localhost:21930/SBrigade.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

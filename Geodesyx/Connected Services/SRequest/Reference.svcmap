@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aeb53758-3163-40c8-ad69-aca8f30a9865" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/SRequest.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SRequest.xsd" MetadataType="Schema" ID="8d6a91b4-e365-47c7-8969-c47296ca861f" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd0" />
+    <MetadataFile FileName="SRequest1.xsd" MetadataType="Schema" ID="dbc00d4c-1fcf-440f-8f70-b26885cbea96" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd7" />
+    <MetadataFile FileName="SRequest.wsdl" MetadataType="Wsdl" ID="2eb27a55-22de-46ed-aa98-62fe423b0f56" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?wsdl" />
+    <MetadataFile FileName="SRequest.disco" MetadataType="Disco" ID="9663b33d-0998-4513-b3a6-248ca2471d32" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?disco" />
+    <MetadataFile FileName="SRequest2.xsd" MetadataType="Schema" ID="a5be1901-50f5-4350-a6af-d14185296005" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd4" />
+    <MetadataFile FileName="SRequest3.xsd" MetadataType="Schema" ID="a7725ed7-b5ab-48f0-851e-2ac53fe0dc1f" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd1" />
+    <MetadataFile FileName="SRequest4.xsd" MetadataType="Schema" ID="ecdab7de-2cdf-4df7-920a-7170130fe420" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd5" />
+    <MetadataFile FileName="SRequest5.xsd" MetadataType="Schema" ID="593aa7d7-a702-4e58-a0a2-ae642cd13e36" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd6" />
+    <MetadataFile FileName="SRequest6.xsd" MetadataType="Schema" ID="b52b902e-fea2-4bee-b6cc-a88bd62fe66f" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd2" />
+    <MetadataFile FileName="SRequest7.xsd" MetadataType="Schema" ID="8e080ba3-d7f7-46f7-9a9e-767140c45de9" SourceId="1" SourceUrl="http://localhost:21930/SRequest.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

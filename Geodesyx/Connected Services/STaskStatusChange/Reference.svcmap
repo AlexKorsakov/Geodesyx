@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1d1801b7-fa17-4eb6-ae6e-4e7cdc865e97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/STaskStatusChange.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="STaskStatusChange.xsd" MetadataType="Schema" ID="2d50d053-87a7-484b-bff9-0d4cdb49d9dd" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd2" />
+    <MetadataFile FileName="STaskStatusChange1.xsd" MetadataType="Schema" ID="4deaa8d7-3488-42b0-af67-61570d3c9664" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd3" />
+    <MetadataFile FileName="STaskStatusChange2.xsd" MetadataType="Schema" ID="7fa05661-9faf-4cb7-9d68-41c318a0a90e" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd0" />
+    <MetadataFile FileName="STaskStatusChange.disco" MetadataType="Disco" ID="f7758bfb-dac3-4fc0-b837-8dd145fe31ad" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?disco" />
+    <MetadataFile FileName="STaskStatusChange3.xsd" MetadataType="Schema" ID="8fa20393-04d0-4363-a5fa-ca13e3208b68" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd6" />
+    <MetadataFile FileName="STaskStatusChange4.xsd" MetadataType="Schema" ID="bcd308c5-1070-42ff-84c9-a99f18bff32d" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd7" />
+    <MetadataFile FileName="STaskStatusChange5.xsd" MetadataType="Schema" ID="00f3e5fc-e0c4-4964-be07-5e7fb6f03945" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd4" />
+    <MetadataFile FileName="STaskStatusChange6.xsd" MetadataType="Schema" ID="f7466ba8-cae2-404e-8555-dc820bb36f22" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd5" />
+    <MetadataFile FileName="STaskStatusChange.wsdl" MetadataType="Wsdl" ID="39f66df0-75cc-4206-b655-6a2d0cd3b09d" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?wsdl" />
+    <MetadataFile FileName="STaskStatusChange7.xsd" MetadataType="Schema" ID="20eac409-dc00-496d-bba6-ebccaea131ff" SourceId="1" SourceUrl="http://localhost:21930/STaskStatusChange.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
