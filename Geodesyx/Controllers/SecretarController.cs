@@ -5,16 +5,33 @@ using System.Web;
 using System.Web.Mvc;
 using Oracle.DataAccess.Client;
 using Geodesyx.Service;
+using Geodesyx.Models;
 
 namespace Geodesyx.Controllers
 {
+
     public class SecretaryController : Controller
     {
+        public bool Auth()
+        {
+            try
+            {
+                string user_type = Request.Cookies["user_type"].Value;
+                return user_type == "1";
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
-
-        // GET: Request
         public ActionResult Index()
         {
+            if (!Auth())
+                return Redirect("/Home/Index");
+
+            OracleWcfService.OracleWcfServiceClient proxy = new OracleWcfService.OracleWcfServiceClient();
+
             //заявки
             var service_request = new SRequest();
             ViewBag.RequestList = service_request.SelectNewRequests();
@@ -23,9 +40,9 @@ namespace Geodesyx.Controllers
             ViewBag.RequestStatusList = service_request_status.SelectAll();
             //связь статусы-заявки
             var service_request_status_change = new SRequestStatusChange();
-            var ids = new List<int>();            
-            foreach( var item in ViewBag.RequestList)
-                ids.Add(item.id);                
+            var ids = new List<int>();
+            foreach (var item in ViewBag.RequestList)
+                ids.Add(item.id);
             ViewBag.RequestStatusChangeList = service_request_status_change.Select(ids);
             //адреса
             var service_address = new SAddress();
@@ -120,7 +137,7 @@ namespace Geodesyx.Controllers
             task_st_change.task_id = id_task;
             service_task_st_change.Insert(task_st_change);
 
-            
+
             Int32.TryParse(form["request_list"], out request_task.request_id);
             Int32.TryParse(form["brigade_list"], out request_task.brigade_id);
             request_task.task_id = id_task;

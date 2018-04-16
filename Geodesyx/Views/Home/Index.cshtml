@@ -1,15 +1,21 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Sign in";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
 <div class="row">
     <div class="col-md-12">
+
+        <form class="form-signin" action="@Url.Action("Login", "Home")" method="post">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
+            <input class="btn btn-lg btn-primary btn-block" value="Sign in" type="submit" />
+        </form>
+
         <h1>
             @ViewBag.Message
         </h1>

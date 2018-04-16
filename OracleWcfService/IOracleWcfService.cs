@@ -44,6 +44,9 @@ namespace OracleWcfService
     {
         [OperationContract]
         IEnumerable<Brigade> SelectBrigades();
+
+        [OperationContract]
+        int SelectBrigadeID(int id);
     }
     
     [ServiceContract]
@@ -125,6 +128,23 @@ namespace OracleWcfService
 
         [OperationContract]
         int Select(string query, IEnumerable<OracleParameter> param = null, string connectionString = null);
+    }
+
+    [ServiceContract]
+    public interface IEmployee
+    {
+        [OperationContract]
+        Employee Select(string username, string password);
+    }
+
+    [ServiceContract]
+    public interface IEmployeeRole
+    {
+        [OperationContract]
+        EmployeeRole Select(int id);
+
+        [OperationContract]
+        IEnumerable<EmployeeRole> SelectAll();
     }
 
     [ServiceContract]

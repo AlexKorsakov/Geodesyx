@@ -156,6 +156,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\OracleWcfService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BrigadeLeadController.cs" />
     <Compile Include="Controllers\DirectorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -166,11 +171,9 @@
     <Compile Include="Models\DTO\VBrigadeEndedTasks.cs" />
     <Compile Include="Models\DTO\VBrigadeInWorkTasks.cs" />
     <Compile Include="Models\DTO\VBrigadeNewTasks.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Service\SBrigade.cs" />
     <Compile Include="Service\IService1.cs" />
     <Compile Include="Models\Authentication.cs" />
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\DTO\Address.cs" />
     <Compile Include="Models\DTO\Brigade.cs" />
     <Compile Include="Models\DTO\Employee.cs" />
@@ -190,6 +193,8 @@
     <Compile Include="Service\SBrigadeEndedTasks.cs" />
     <Compile Include="Service\SBrigadeInWorkTasks.cs" />
     <Compile Include="Service\SBrigadeNewTasks.cs" />
+    <Compile Include="Service\SEmployee.cs" />
+    <Compile Include="Service\SEmployeeRole.cs" />
     <Compile Include="Service\Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -210,6 +215,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService.disco" />
+    <None Include="Connected Services\OracleWcfService\configuration91.svcinfo" />
+    <None Include="Connected Services\OracleWcfService\configuration.svcinfo" />
+    <None Include="Connected Services\OracleWcfService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -227,6 +239,28 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\DBService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService.wsdl" />
+    <None Include="Connected Services\OracleWcfService\OracleWcfService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OracleWcfService\OracleWcfService6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -262,7 +296,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Request\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -282,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DBService\" />
+    <WCFMetadataStorage Include="Connected Services\OracleWcfService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

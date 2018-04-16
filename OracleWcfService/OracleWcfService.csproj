@@ -68,7 +68,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IOracleWcfService.cs" />
     <Compile Include="OracleWcfService.svc.cs">
       <DependentUpon>OracleWcfService.svc</DependentUpon>
     </Compile>
@@ -78,6 +78,8 @@
     <Compile Include="SBrigadeEndedTasks.cs" />
     <Compile Include="SBrigadeInWorkTasks.cs" />
     <Compile Include="SBrigadeNewTasks.cs" />
+    <Compile Include="SEmployee.cs" />
+    <Compile Include="SEmployeeRole.cs" />
     <Compile Include="SRequest.cs" />
     <Compile Include="SRequestStatus.cs" />
     <Compile Include="SRequestStatusChange.cs" />

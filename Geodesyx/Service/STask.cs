@@ -104,21 +104,21 @@ namespace Geodesyx.Service
         public int Update(int id = -1, string note = null, int total_time = -1)
         {
             int count = 0;
+            var parameters = new List<OracleParameter>();
             using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
             {
                 if (id == -1)
                     return 0;
                 string query = "UPDATE system.Task SET ";
                 if (note != null)
-                    query += "note = :note , ";
+                    query += "note = :note, ";
                 if (total_time >-1)
                     query += "total_time = :total_time ";
                 connection.Open();
-                OracleCommand oraCommand = new OracleCommand(query + " WHERE task_id=:id", connection);
-                oraCommand.Parameters.Add("id", id);
-                oraCommand.Parameters.Add("note", note);
-                oraCommand.Parameters.Add("total_time", total_time);
-                count = oraCommand.ExecuteNonQuery();
+                parameters.Add(new OracleParameter("id", id));
+                parameters.Add(new OracleParameter("note", note));
+                parameters.Add(new OracleParameter("total_time", total_time));
+                int res = ExecuteNonQuery(query + " WHERE task_id=:id", parameters);
             }
             return count;
         }

@@ -9,9 +9,23 @@ namespace Geodesyx.Controllers
 {
     public class DirectorController : Controller
     {
+        public bool Auth()
+        {
+            try
+            {
+                string user_type = Request.Cookies["user_type"].Value;
+                return user_type == "2";
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public ActionResult Index()
         {
+            if (!Auth())
+                return Redirect("/Home/Index");
             //бригады
             var service_brigades = new SBrigade();
             ViewBag.BrigadeList = service_brigades.SelectBrigades();

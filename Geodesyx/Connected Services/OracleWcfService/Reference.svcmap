@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d7ba25a-fcd5-4c17-b13d-ac92792941f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:21930/OracleWcfService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OracleWcfService.xsd" MetadataType="Schema" ID="3b6f2620-9ee7-4d5c-9234-289de69c2bde" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OracleWcfService1.xsd" MetadataType="Schema" ID="cfdd604e-f11f-4f03-99d4-fceac3b94e82" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OracleWcfService.wsdl" MetadataType="Wsdl" ID="a0f519c3-9f4b-43cb-a2c2-ab90230c812f" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?wsdl" />
+    <MetadataFile FileName="OracleWcfService2.xsd" MetadataType="Schema" ID="a96b9947-1c0e-4bc5-bdc2-55205629d099" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OracleWcfService3.xsd" MetadataType="Schema" ID="91172ba2-1f12-4d5e-8c44-c6e00ef42eeb" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd5" />
+    <MetadataFile FileName="OracleWcfService4.xsd" MetadataType="Schema" ID="df8cef92-7824-40a0-94e4-6ceff6972597" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OracleWcfService.disco" MetadataType="Disco" ID="bf51eeae-760e-4cf1-8c02-5179dd106745" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?disco" />
+    <MetadataFile FileName="OracleWcfService5.xsd" MetadataType="Schema" ID="441ee269-88b5-44ad-9291-f2aefead927b" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OracleWcfService6.xsd" MetadataType="Schema" ID="84aaef11-405c-4ff0-a73c-c2d6988251d1" SourceId="1" SourceUrl="http://localhost:21930/OracleWcfService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

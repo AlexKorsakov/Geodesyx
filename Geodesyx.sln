@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geodesyx", "Geodesyx\Geodesyx.csproj", "{0400ADFF-11D1-4FEF-8340-F0472E84940A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F22F450E-241A-4D61-85D0-4D0C160B4D3D} = {F22F450E-241A-4D61-85D0-4D0C160B4D3D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleWcfService", "OracleWcfService\OracleWcfService.csproj", "{F22F450E-241A-4D61-85D0-4D0C160B4D3D}"
 EndProject

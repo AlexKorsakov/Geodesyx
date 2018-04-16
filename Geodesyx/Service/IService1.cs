@@ -39,6 +39,9 @@ namespace Geodesyx
     {
         [OperationContract]
         IEnumerable<Models.DTO.Brigade> SelectBrigades();
+
+        [OperationContract]
+        int SelectBrigadeID(int id);
     }
     
     [ServiceContract]
@@ -116,6 +119,23 @@ namespace Geodesyx
         IEnumerable<Models.DTO.RequestStatusChange> Select(List<int> ids);
         [OperationContract]
         Models.DTO.RequestStatusChange SelectLastStatus(int id);
+    }
+
+    [ServiceContract]
+    public interface IEmployee
+    {
+        [OperationContract]
+        Models.DTO.Employee Select(string username, string password);
+    }
+
+    [ServiceContract]
+    public interface IEmployeeRole
+    {
+        [OperationContract]
+        Models.DTO.EmployeeRole Select(int id);
+
+        [OperationContract]
+        IEnumerable<Models.DTO.EmployeeRole> SelectAll();
     }
 
     [ServiceContract]

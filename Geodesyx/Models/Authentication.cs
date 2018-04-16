@@ -3,75 +3,70 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Geodesyx.Models.DTO;
+using Geodesyx.Service;
 
-namespace FiltersApp.Filters
+namespace Geodesyx.Models
 {
     public class Authentication : AuthorizeAttribute
     {
-        private string[] allowedUsers = new string[] { };
-        private string[] allowedRoles = new string[] { };
 
-        public Authentication() { }
-
-        protected override bool AuthorizeCore(HttpContextBase httpContext)
+        public EmployeeRole GetRole(Employee user )
         {
-            if (!String.IsNullOrEmpty(base.Users))
-            {
-                allowedUsers = base.Users.Split(new char[] { ',' });
-                for (int i = 0; i < allowedUsers.Length; i++)
-                {
-                    allowedUsers[i] = allowedUsers[i].Trim();
-                }
+            try { 
+                var service_user_role = new SEmployeeRole();
+                var role = service_user_role.Select(user.id);
+                return role;
             }
-            if (!String.IsNullOrEmpty(base.Roles))
+            catch
             {
-                allowedRoles = base.Roles.Split(new char[] { ',' });
-                for (int i = 0; i < allowedRoles.Length; i++)
-                {
-                    allowedRoles[i] = allowedRoles[i].Trim();
-                }
+                return null;
             }
-
-            return httpContext.Request.IsAuthenticated &&
-            User(httpContext) && Role(httpContext);
+        }
+        
+        public Employee GetUser(string username, string password)
+        {
+            try
+            {
+                var service_user = new SEmployee();
+                var user = service_user.Select(username, password);
+                var role = GetRole(user);
+                return user;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        private bool User(HttpContextBase httpContext)
+        public bool SetCookie(EmployeeRole role, Employee empl)
         {
-            if (allowedUsers.Length > 0)
+            if(role.id > -1 && empl.id > -1)
             {
-                return allowedUsers.Contains(httpContext.User.Identity.Name);
+                HttpCookie user_type = new HttpCookie("user_type");
+                user_type.Value = role.id.ToString();
+                user_type.Expires = DateTime.Now.AddHours(1);
+
+                HttpCookie user = new HttpCookie("user");
+                user.Value = empl.id.ToString();
+                user.Expires = DateTime.Now.AddHours(1);
+
+                return true;
             }
+            return false;
+        }
+
+
+        public bool DeleteCookie()
+        {
+            HttpCookie user_type = new HttpCookie("user_type");
+            user_type.Expires = DateTime.Now.AddHours(-1);
+            HttpCookie user = new HttpCookie("user");
+            user.Expires = DateTime.Now.AddHours(-1);
+
+
             return true;
         }
-
-        private bool Role(HttpContextBase httpContext)
-        {
-            if (allowedRoles.Length > 0)
-            {
-                for (int i = 0; i < allowedRoles.Length; i++)
-                {
-                    if (httpContext.User.IsInRole(allowedRoles[i]))
-                        return true;
-                }
-                return false;
-            }
-            return true;
-        }
-
-        public Authentication(string username, string password)
-        {
-            /*
-            HttpCookie StudentCookies = new HttpCookie("StudentCookies");
-            StudentCookies.Value = "";
-            StudentCookies.Expires = DateTime.Now.AddHours(1);
-
-            bool IsAdmin = HttpContext.User.IsInRole("admin"); // определяем, принадлежит ли пользователь к администраторам
-            bool IsAuth = HttpContext.User.Identity.IsAuthenticated; // аутентифицирован ли пользователь
-            string login = HttpContext.User.Identity.Name; // логин авторизованного пользователя
-            */
-        }
-
     }
 
 

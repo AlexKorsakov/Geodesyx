@@ -25,17 +25,19 @@
                 <div id="home" class="tab-pane fade in active">
                     <div class="row">
                         <div class="col-md-12">
-                            <table id="requests" class="table table-striped">
-                                <tr>
-                                    <th>Название</th>
-                                    <th>Описание</th>
-                                    <th>Статус</th>
-                                    <th>Дата</th>
-                                </tr>
-                                @foreach (var item in ViewBag.RequestStatusChangeList)
-                                {
+                            <div style="overflow: auto;max-height: 400px;">
+                                <table id="requests" class="table table-striped">
                                     <tr>
-                                            @foreach (var subitem in ViewBag.RequestList) {
+                                        <th>Название</th>
+                                        <th>Описание</th>
+                                        <th>Статус</th>
+                                        <th>Дата</th>
+                                    </tr>
+                                    @foreach (var item in ViewBag.RequestStatusChangeList)
+                                    {
+                                        <tr>
+                                            @foreach (var subitem in ViewBag.RequestList)
+                                            {
                                                 if (subitem.id == item.request_id)
                                                 {
                                                     <td>@subitem.name</td>
@@ -43,7 +45,8 @@
                                                     break;
                                                 }
                                             }
-                                            @foreach (var subitem in ViewBag.RequestStatusList) {
+                                            @foreach (var subitem in ViewBag.RequestStatusList)
+                                            {
                                                 if (subitem.id == item.new_status)
                                                 {
                                                     <td>
@@ -52,12 +55,14 @@
                                                     break;
                                                 }
                                             }
-                                        <td>                                                        
-                                            @item.change_date                                                    
-                                        </td>
-                                    </tr>
-                                }
-                            </table>
+                                            <td>
+                                                @item.change_date
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+
 
                             <h4>Добавить новую заявку</h4>
                             <form action="@Url.Action("AddRequest", "Secretary")" method="post">
@@ -86,25 +91,28 @@
                 <div id="menu1" class="tab-pane fade">
                     <div class="row">
                         <div class="col-md-12">
-                            <table id="tasks" class="table table-striped">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Заметка</th>
-                                    <th>Статус</th>
-                                    <th>Создано</th>
-                                </tr>
-                                @foreach (var item in ViewBag.TaskStatusChangeList)
-                                {
+                            <div style="overflow: auto;max-height: 600px;">
+                                <table id="tasks" class="table table-striped">
                                     <tr>
-                                    <td> @item.id </td>
-                                        @foreach (var subitem in ViewBag.TaskList) {
+                                        <th>ID</th>
+                                        <th>Заметка</th>
+                                        <th>Статус</th>
+                                        <th>Создано</th>
+                                    </tr>
+                                    @foreach (var item in ViewBag.TaskStatusChangeList)
+                                    {
+                                        <tr>
+                                            <td> @item.id </td>
+                                            @foreach (var subitem in ViewBag.TaskList)
+                                            {
                                                 if (subitem.id == item.task_id)
                                                 {
                                                     <td>@subitem.task_note</td>
                                                     break;
                                                 }
                                             }
-                                            @foreach (var subitem in ViewBag.TaskStatusList) {
+                                            @foreach (var subitem in ViewBag.TaskStatusList)
+                                            {
                                                 if (subitem.id == item.new_status)
                                                 {
                                                     <td>
@@ -113,10 +121,11 @@
                                                     break;
                                                 }
                                             }
-                                        <td> @item.change_date </td>
-                                    </tr>
-                                }
-                            </table>
+                                            <td> @item.change_date </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
 
                             <h4>Добавить новую задачу</h4><br />
                             <form action="@Url.Action("AddTask", "Secretary")" method="post" id="AddTaskForm">
@@ -127,49 +136,49 @@
                                         <div class="col-lg-6 col-md-6">
                                             <label for="AddTaskForm-address">Выбрать адрес</label>
                                             <select class="form-control" id="AddTaskForm-address" name="address" style="max-width:100%;">
-                                                  @foreach (var item in ViewBag.AddressList)
-                                                    {
-                                                        <option value="@item.id">@item.address_name</option>
-                                                    }
-                                                </select>
+                                                @foreach (var item in ViewBag.AddressList)
+                                                {
+                                                    <option value="@item.id">@item.address_name</option>
+                                                }
+                                            </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <label for="AddTaskForm-address">Добавить адрес</label>
                                             <input type="text" class="form-control" placeholder="Адрес" id="AddTaskForm-address-new" name="address-new" style="max-width:100%;">
                                         </div>
                                     </div>
-                                          <div class="row">
-                                              <div class="col-lg-6 col-md-6">
-                                                <label for="AddTaskForm-service_list">Выбор услуги</label>
-                                                <select class="form-control" id="AddTaskForm-service_list" name="service_list" style="max-width:100%;">
-                                                  @foreach (var item in ViewBag.ServiceList)
-                                                    {
-                                                        <option value="@item.id">@item.service_name</option>
-                                                    }
-                                                </select>
-                                              </div>
-                                              
-                                            <div class="col-lg-6 col-md-6">
-                                                <label for="AddTaskForm-request_list">Выбор заявки</label>
-                                                <select class="form-control" id="AddTaskForm-request_list" name="request_list" style="max-width:100%;">
-                                                    @foreach (var item in ViewBag.RequestList)
-                                                    {
-                                                        <option value="@item.id">@item.name</option>
-                                                    }
-                                                </select>
-                                              </div>
-                                          </div>
-                                        <div class="row">                                              
-                                              <div class="col-lg-12 col-md-12">
-                                                <label for="AddTaskForm-brigade_list">Назначение бригады</label>
-                                                <select class="form-control" id="AddTaskForm-brigade_list" name="brigade_list" style="max-width:100%;">
-                                                  @foreach (var item in ViewBag.BrigadeList)
-                                                    {
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <label for="AddTaskForm-service_list">Выбор услуги</label>
+                                            <select class="form-control" id="AddTaskForm-service_list" name="service_list" style="max-width:100%;">
+                                                @foreach (var item in ViewBag.ServiceList)
+                                                {
+                                                    <option value="@item.id">@item.service_name</option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6">
+                                            <label for="AddTaskForm-request_list">Выбор заявки</label>
+                                            <select class="form-control" id="AddTaskForm-request_list" name="request_list" style="max-width:100%;">
+                                                @foreach (var item in ViewBag.RequestList)
+                                                {
+                                                    <option value="@item.id">@item.name</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <label for="AddTaskForm-brigade_list">Назначение бригады</label>
+                                            <select class="form-control" id="AddTaskForm-brigade_list" name="brigade_list" style="max-width:100%;">
+                                                @foreach (var item in ViewBag.BrigadeList)
+                                                {
                                                     <option value="@item.id">@item.brigadeLead: @item.brigadeName</option>
-                                                    }
-                                                </select>
-                                              </div>
-                                          </div>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-12">

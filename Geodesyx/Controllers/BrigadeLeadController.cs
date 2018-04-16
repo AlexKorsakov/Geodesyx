@@ -9,14 +9,34 @@ namespace Geodesyx.Controllers
 {
     public class BrigadeLeadController : Controller
     {
-        // GET: BrigadeLead
+        public bool Auth()
+        {
+            try
+            {
+                string user_type = Request.Cookies["user_type"].Value;
+                return user_type == "3";
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public ActionResult Index()
         {
-            //получить из базы номер бригады через модель авторизации
-            int brigade_id = 2;
+            if (!Auth())
+                return Redirect("/Home/Index");
+
+            int brigade_id = -1;
+            var br = new SBrigade();
+            Int32.TryParse(Request.Cookies["user"].Value, out brigade_id);
             //////
             try
             {
+                brigade_id = br.SelectBrigadeID(brigade_id);
+
+                if (brigade_id<=-1)
+                    return View();
                 var ids = new List<int>();
                 
                 var service_request_task = new SRequest_Task();

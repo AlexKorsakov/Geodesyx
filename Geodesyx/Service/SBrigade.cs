@@ -30,5 +30,22 @@ namespace Geodesyx.Service
             }
             return requests;
         }
+
+        public int SelectBrigadeID(int id)
+        {
+            int output = -1;
+            using (OracleConnection connection = new OracleConnection(Service1.CONNECTION_STRING))
+            {
+                connection.Open();
+                OracleCommand oraCommand = new OracleCommand("SELECT b.BRIGADE_ID "
+                                                              + "FROM BRIGADE b WHERE b.BRIGADE_LEAD_ID = :id", connection);
+                oraCommand.Parameters.Add("id", id);
+                OracleDataReader oraReader = oraCommand.ExecuteReader();
+                if (oraReader.HasRows)
+                    while (oraReader.Read())
+                        output = oraReader.GetInt32(0);
+            }
+            return output;
+        }
     }
 }
