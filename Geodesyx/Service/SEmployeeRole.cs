@@ -15,7 +15,7 @@ namespace Geodesyx.Service
             {
                 connection.Open();
                 OracleCommand oraCommand = new OracleCommand("SELECT * FROM system.employee_role WHERE employee_role_id=:id", connection);
-                oraCommand.Parameters.Add("id", id);
+                oraCommand.Parameters.Add(":id", id);
                 OracleDataReader oraReader = oraCommand.ExecuteReader();
                 if (oraReader.HasRows)
                     while (oraReader.Read())

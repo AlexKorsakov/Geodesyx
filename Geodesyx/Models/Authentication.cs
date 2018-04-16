@@ -15,7 +15,7 @@ namespace Geodesyx.Models
         {
             try { 
                 var service_user_role = new SEmployeeRole();
-                var role = service_user_role.Select(user.id);
+                var role = service_user_role.Select(user.employeeRole_id);
                 return role;
             }
             catch

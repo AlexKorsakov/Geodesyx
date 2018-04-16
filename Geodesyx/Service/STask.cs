@@ -115,10 +115,10 @@ namespace Geodesyx.Service
                 if (total_time >-1)
                     query += "total_time = :total_time ";
                 connection.Open();
-                parameters.Add(new OracleParameter("id", id));
-                parameters.Add(new OracleParameter("note", note));
-                parameters.Add(new OracleParameter("total_time", total_time));
-                int res = ExecuteNonQuery(query + " WHERE task_id=:id", parameters);
+                //parameters.Add(new OracleParameter(":id", id));
+                parameters.Add(new OracleParameter(":note", note));
+                parameters.Add(new OracleParameter(":total_time", total_time));
+                int res = ExecuteNonQuery(query + " WHERE task_id = " + id.ToString(), parameters);
             }
             return count;
         }

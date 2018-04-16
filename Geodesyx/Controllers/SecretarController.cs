@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Oracle.DataAccess.Client;
 using Geodesyx.Service;
 using Geodesyx.Models;
+using DTOlib;
 
 namespace Geodesyx.Controllers
 {
@@ -27,10 +28,11 @@ namespace Geodesyx.Controllers
 
         public ActionResult Index()
         {
+
             if (!Auth())
                 return Redirect("/Home/Index");
 
-            OracleWcfService.OracleWcfServiceClient proxy = new OracleWcfService.OracleWcfServiceClient();
+            //OracleWcfServiceClient proxy = new OracleWcfServiceClient();
 
             //заявки
             var service_request = new SRequest();
