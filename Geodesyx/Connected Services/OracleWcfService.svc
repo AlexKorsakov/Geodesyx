@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Geodesyx.Connected_Services.OracleWcfService" CodeBehind="OracleWcfService.svc.cs" %>

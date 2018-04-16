@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Data;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Geodesyx
 {

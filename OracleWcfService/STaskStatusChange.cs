@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using OracleWcfService;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using DTOlib;
 
 namespace OracleWcfService
@@ -26,7 +26,6 @@ namespace OracleWcfService
             else
                 return -1;
         }
-        
 
         public IEnumerable<TaskStatusChange> Select(List<int> ids)
         {

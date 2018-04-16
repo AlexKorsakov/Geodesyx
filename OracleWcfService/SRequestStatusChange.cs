@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using OracleWcfService;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using DTOlib;
 
 namespace OracleWcfService
@@ -81,7 +81,6 @@ namespace OracleWcfService
             }
             return request;
         }
-
 
         public int Select(string query, IEnumerable<OracleParameter> param = null, string connectionString = null)
         {

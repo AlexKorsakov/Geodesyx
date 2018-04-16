@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Data;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System.Web.Configuration;
 using System.Reflection;
 using DTOlib;
@@ -14,10 +14,23 @@ using DTOlib;
 namespace OracleWcfService
 {
     [ServiceContract]
+    public interface IOracleWcfService
+    {
+        [OperationContract]
+        int ExecuteNonQuery(string query, IEnumerable<OracleParameter> param = null, string connectionString = null);
+
+        [OperationContract]
+        int SelectCurrentFromSequence(string sequence_name, string connectionString = null);
+    }
+
+    [ServiceContract]
     public interface IAddress
     {
         [OperationContract]
         Address Select(int id);
+
+        [OperationContract]
+        IEnumerable<Address> SelectAddresses();
 
         [OperationContract]
         int Insert(Address input);
@@ -85,10 +98,10 @@ namespace OracleWcfService
     public interface IRequest_Task
     {
         [OperationContract]
-        int Insert(Request_Task input);
+        List<int> SelectTasksID(int brigade);
 
         [OperationContract]
-        List<int> SelectTasksID(int brigade);
+        int Insert(Request_Task input);
     }
 
     [ServiceContract]
@@ -98,16 +111,20 @@ namespace OracleWcfService
         IEnumerable<RequestStatus> SelectAll();
     }
 
-
     [ServiceContract]
     public interface IRequestStatusChange
     {
         [OperationContract]
         int Insert(RequestStatusChange input);
+
         [OperationContract]
         IEnumerable<RequestStatusChange> Select(List<int> ids);
+
         [OperationContract]
         RequestStatusChange SelectLastStatus(int id);
+
+        [OperationContract]
+        int Select(string query, IEnumerable<OracleParameter> param = null, string connectionString = null);
     }
 
     [ServiceContract]
@@ -124,10 +141,19 @@ namespace OracleWcfService
     public interface ITask
     {
         [OperationContract]
+        IEnumerable<Task> SelectTasks(List<int> ids);
+
+        [OperationContract]
         IEnumerable<Task> SelectNewTasks();
 
         [OperationContract]
+        List<int> SelectTaskIDs_ByStatus(int status_id);
+
+        [OperationContract]
         int Insert(Task input);
+
+        [OperationContract]
+        int Update(int id = -1, string note = null, int total_time = -1);
     }
 
     [ServiceContract]
@@ -140,25 +166,13 @@ namespace OracleWcfService
     [ServiceContract]
     public interface ITaskStatusChange
     {
-        /*
-        [OperationContract]
-        IEnumerable<TaskStatusChange> SelectNewServices();
-        */
         [OperationContract]
         int Insert(TaskStatusChange input);
 
         [OperationContract]
         IEnumerable<TaskStatusChange> Select(List<int> ids);
-    }
-    /*
-    [ServiceContract]
-    public interface IUniversal
-    {
+
         [OperationContract]
-        void Insert<T> (out int result, ref T DTO, List<object> Parameters, string query);
-
-        void ExcecuteQuery(string query, IEnumerable<Oracle.DataAccess.Client.OracleParameter> param = null, string connectionString = null);
-
+        IEnumerable<TaskStatusChange> SelectNewTasks();
     }
-    */
 }

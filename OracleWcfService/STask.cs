@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using OracleWcfService;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using DTOlib;
 
 namespace OracleWcfService
@@ -11,30 +11,6 @@ namespace OracleWcfService
 
     public class STask : OracleWcfService, ITask
     {
-        public IEnumerable<Task> SelectNewTasks()  //новые задачи
-        {
-            List<Task> requests = new List<Task>();
-            using (OracleConnection connection = new OracleConnection(OracleWcfService.CONNECTION_STRING))
-            {
-                connection.Open();  
-                OracleCommand oraCommand = new OracleCommand("SELECT tsk.TASK_ID, tsk.NOTE, tsk.ADDRESS_ID, tsk.SERVICE_ID "
-                                                              + "FROM system.task  tsk right join system.task_STATUS_CHANGE tsk_st on tsk.TASK_ID = tsk_st.TASK_ID "
-                                                              + "WHERE tsk_st.TASK_STATUS_ID_ACTUAL = 1", connection);
-                OracleDataReader oraReader = oraCommand.ExecuteReader();
-                if (oraReader.HasRows)
-                    while (oraReader.Read())
-                    {
-                        var temp = new Task();
-                        temp.id = oraReader.GetInt32(0);
-                        temp.task_note = oraReader.GetString(1);
-                        temp.address_id = oraReader.GetInt32(2);
-                        temp.service_id = oraReader.GetInt32(3);
-                        requests.Add(temp);
-                    }
-            }
-            return requests;
-        }
-
         public IEnumerable<Task> SelectTasks(List<int> ids)
         {
             var list = new List<Task>();
@@ -62,6 +38,30 @@ namespace OracleWcfService
                 }
             }
             return list;
+        }
+
+        public IEnumerable<Task> SelectNewTasks()  //новые задачи
+        {
+            List<Task> requests = new List<Task>();
+            using (OracleConnection connection = new OracleConnection(OracleWcfService.CONNECTION_STRING))
+            {
+                connection.Open();  
+                OracleCommand oraCommand = new OracleCommand("SELECT tsk.TASK_ID, tsk.NOTE, tsk.ADDRESS_ID, tsk.SERVICE_ID "
+                                                              + "FROM system.task  tsk right join system.task_STATUS_CHANGE tsk_st on tsk.TASK_ID = tsk_st.TASK_ID "
+                                                              + "WHERE tsk_st.TASK_STATUS_ID_ACTUAL = 1", connection);
+                OracleDataReader oraReader = oraCommand.ExecuteReader();
+                if (oraReader.HasRows)
+                    while (oraReader.Read())
+                    {
+                        var temp = new Task();
+                        temp.id = oraReader.GetInt32(0);
+                        temp.task_note = oraReader.GetString(1);
+                        temp.address_id = oraReader.GetInt32(2);
+                        temp.service_id = oraReader.GetInt32(3);
+                        requests.Add(temp);
+                    }
+            }
+            return requests;
         }
 
         public List<int> SelectTaskIDs_ByStatus(int status_id)  //новые задачи
@@ -100,7 +100,6 @@ namespace OracleWcfService
                 return -1;
             }
         }
-
 
         public int Update(int id = -1, string note = null, int total_time = -1)
         {
