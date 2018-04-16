@@ -5,12 +5,8 @@ using System.Web;
 
 namespace Geodesyx.Models
 {
-    public class Autorization
+    public static class User
     {
-        public Autorization(string username, string password)
-        {
-
-        }
-
+        public static int UserType;
     }
 }

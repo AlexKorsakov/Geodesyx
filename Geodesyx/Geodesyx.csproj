@@ -164,9 +164,10 @@
     <Compile Include="Models\DTO\VBrigadeEndedTasks.cs" />
     <Compile Include="Models\DTO\VBrigadeInWorkTasks.cs" />
     <Compile Include="Models\DTO\VBrigadeNewTasks.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Service\SBrigade.cs" />
     <Compile Include="Service\IService1.cs" />
-    <Compile Include="Models\Autorization.cs" />
+    <Compile Include="Models\Authentication.cs" />
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\DTO\Address.cs" />
     <Compile Include="Models\DTO\Brigade.cs" />
@@ -279,6 +280,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DBService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OracleWcfService\OracleWcfService.csproj">
+      <Project>{f22f450e-241a-4d61-85d0-4d0c160b4d3d}</Project>
+      <Name>OracleWcfService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

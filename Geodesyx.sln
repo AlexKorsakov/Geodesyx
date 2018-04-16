@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geodesyx", "Geodesyx\Geodesyx.csproj", "{0400ADFF-11D1-4FEF-8340-F0472E84940A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleWcfService", "OracleWcfService\OracleWcfService.csproj", "{F22F450E-241A-4D61-85D0-4D0C160B4D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOlib", "DTOlib\DTOlib.csproj", "{082C0587-7A09-4967-82AA-09B3BFE8F42F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0400ADFF-11D1-4FEF-8340-F0472E84940A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0400ADFF-11D1-4FEF-8340-F0472E84940A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0400ADFF-11D1-4FEF-8340-F0472E84940A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22F450E-241A-4D61-85D0-4D0C160B4D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22F450E-241A-4D61-85D0-4D0C160B4D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22F450E-241A-4D61-85D0-4D0C160B4D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22F450E-241A-4D61-85D0-4D0C160B4D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082C0587-7A09-4967-82AA-09B3BFE8F42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082C0587-7A09-4967-82AA-09B3BFE8F42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082C0587-7A09-4967-82AA-09B3BFE8F42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082C0587-7A09-4967-82AA-09B3BFE8F42F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

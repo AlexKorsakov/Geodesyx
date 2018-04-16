@@ -15,7 +15,12 @@ namespace Geodesyx.Controllers
 
         public ActionResult Index()
         {
-            //ViewBag.data = DBops.DoWork();
+            var cookie = new HttpCookie("auth")
+            {
+                Value = DateTime.Now.ToString("dd.MM.yyyy"),
+                Expires = DateTime.Now.AddDays(1),
+            };
+            Response.SetCookie(cookie);
             return View();
         }
 
@@ -28,7 +33,7 @@ namespace Geodesyx.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Контакты.";
 
             return View();
         }
